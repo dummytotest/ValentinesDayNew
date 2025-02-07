@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cats in Space</title>
+    <link rel="stylesheet" href="scss/style.css" />
+    <script src="https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.umd.js"></script>
+    <script src="script.js" async></script>
+    
+    <script>
+    window.onload = function() {
+    window.scrollTo(0, 0);// Scroll to top
+};
+</script>
+    <style>
+    body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 0%);
+  background-image: url("img/jeremy-perkins-uhjiu8FjnsQ-unsplash-small.jpg");
+  color: #ffffff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+    </style>
+    <style>
+        /* Styles for the timer and content */
+        #timer {
+            font-size: 24px;
+            align-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+         #timer img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+           margin-left: 5%;
+        }
+        #content {
+            font-size: 20px;
+            text-align: center;
+            padding: 20px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+    
+  </head>
+  <body>
+    <header class="topnav wrapper">
+      <h1><a href="rose.html">Rose Day 🌹 </a></h1>
+      <nav>
+        <span id="nav-label" hidden>Navigation</span>
+        <button id="btnOpen" class="topnav__open" aria-expanded="false" aria-labelledby="nav-label">
+          <img src="img/hamburger.svg" alt="" width="40" height="24" />
+        </button>
+        <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
+          <button class="topnav__close" id="btnClose" aria-label="Close">
+            <img src="img/close.svg" alt="" width="28" height="27" />
+          </button>
+          <ul class="topnav__links">
+            <li class="topnav__item">
+              <a href="index.html" class="topnav__link">The Valentine Saga</a>
+            </li>
+            <li class="topnav__item">
+              <a href="rose.html" class="topnav__link">Rose Day</a>
+            </li>
+            <li class="topnav__item">
+              <a href="propose.html" class="topnav__link">Propose Day</a>
+            </li>
+            <li class="topnav__item">
+              <a href="chocolate.html" class="topnav__link">Chocolate Day</a>
+            </li>
+            <li class="topnav__item">
+              <a href="teddy.html" class="topnav__link">Teddy Day</a>
+            </li>
+            <li class="topnav__item">
+              <a href="promise.html" class="topnav__link">Promise Day</a>
+            </li>
+            <li class="topnav__item">
+              <a href="hug.html" class="topnav__link">Hug Day</a>
+            </li>
+            <li class="topnav__item">
+              <a href="kiss.html" class="topnav__link">Kiss Day</a>
+            </li>
+            <li class="topnav__item">
+              <a href="valentine.html" class="topnav__link">Valentine Day</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="timer">
+        <p>Roses Arriving Soon</p>
+        <img id="truck" src="img/truck.gif" alt="truck" width="250"/>
+        <br>
+        <br>
+        <div id="countdown"></div>
+    </div>
+    <div id="content">
+      <section class="wrapper cat" id="nyancat">
+        <img src="img/rose.gif" alt="cat-rose" width="250" />
+        <h2>Rose?</h2>
+        <p>
+          I can still remember last year’s Rose Day so clearly—it
+          was a moment that made my heart skip a beat. 
+          When you gave me those roses for the first time,
+          I felt an overwhelming sense of joy and love that I can’t quite describe.
+          The simple act of you handing them to me was more than just a gesture;
+          it was a symbol of how deeply you care and how lucky I am to have you in my life.
+        </p>
+      </section>
+      <section class="wrapper cat" id="catra">
+        <img src="img/petals.gif" alt="petal-shower" width="300" />
+        <h2>Wish</h2>
+        <p>
+          I wish to present you with roses every day, 
+          whether it is a small little one on the branch of a plant,
+the perfect ones found at the flower shop, 
+          or even the ones that bloom, 
+          dropping a petal or two, because they are all beautiful.
+Just as beautiful as you are. 
+          And this ain’t just about the way you look, but how you feel and how you turn everything around you into something 
+          beautiful.
+        </p>
+      </section>
+      <section class="wrapper cat" id="garfield">
+        <img src="img/rub.gif" alt="Gulu-Gulu" width="250" />
+        <h2>❤️</h2>
+        <h6>made with love by Cupcake</h6>
+        <h2>🧁</h2>
+      </section>
+      </div>
+    </main>
+    
+    <script>
+        // Set the target date and time (8th February 2025 at 11:11 AM)
+        const targetDate = new Date('2025-02-07T11:11:00').getTime();
+
+        // Function to update the countdown timer
+        function updateTimer() {
+            const currentDate = new Date().getTime(); // Get the current time
+            const remainingTime = targetDate - currentDate; // Calculate the time remaining
+
+            // If time is still remaining, update the countdown
+            if (remainingTime > 0) {
+                const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                // If time is up, hide the timer and show the actual content
+                document.getElementById("timer").style.display = "none"; // Hide the timer
+                document.getElementById("content").style.display = "block"; // Show the content
+            }
+        }
+
+        // Call the updateTimer function every 1 second to keep the countdown updated
+        setInterval(updateTimer, 1000);
+
+        // Initial call to update the timer
+        updateTimer();
+    </script>
+  </body>
+</html>
