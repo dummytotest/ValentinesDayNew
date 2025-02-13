@@ -46,6 +46,28 @@
         }
     </style>
     
+    <style>
+        
+        .slideshow-container {
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+            max-height: 400px;
+            align-content: center;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+          margin-left: 10%
+        }
+        .slides img {
+            width: 100%;
+            display: none;
+        }
+        .slides img.active {
+            display: block;
+        }
+    </style>
+    
   </head>
   <body>
     <header class="topnav wrapper">
@@ -101,40 +123,105 @@
     </div>
     <div id="content">
       <section class="wrapper cat" id="nyancat">
-        <img src="img/rose.gif" alt="cat-rose" width="250" />
-        <h2>Rose?</h2>
+        <section>
+      <div class="slideshow-container">
+        <div class="slides">
+            <img src="img/photous.jpeg" class="active" alt="Slide 1">
+            <img src="img/cp2.jpg" alt="Slide 2">
+            <img src="img/cp3.jpg" alt="Slide 3">
+            <img src="img/slide1.jpeg" alt="Slide 4">
+            <img src="img/slide2.jpeg" alt="Slide 5">
+            <img src="img/slide3.jpeg" alt="Slide 6">
+            <img src="img/slide4.jpeg" alt="Slide 7">
+            <img src="img/slide5.jpeg" alt="Slide 8">
+            <img src="img/slide6.jpeg" alt="Slide 9">
+            <img src="img/slide7.jpeg" alt="Slide 10">
+            <img src="img/slide8.jpeg" alt="Slide 11">
+            <img src="img/slide9.jpeg" alt="Slide 12">
+            <img src="img/slide10.jpeg" alt="Slide 13">
+            <img src="img/slide11.jpeg" alt="Slide 14">
+            <img src="img/slide12.jpeg" alt="Slide 15">
+            <img src="img/slide13.jpeg" alt="Slide 16">
+            <img src="img/slide14.jpeg" alt="Slide 17">
+            <img src="img/slide15.jpeg" alt="Slide 18">
+
+        </div>
+    </div>
+      </section>
+        <h2>Valentine Day-Yaaayyyyyy</h2>
         <p>
-          I can still remember last year’s Rose Day so clearly—it
-          was a moment that made my heart skip a beat. 
-          When you gave me those roses for the first time,
-          I felt an overwhelming sense of joy and love that I can’t quite describe.
-          The simple act of you handing them to me was more than just a gesture;
-          it was a symbol of how deeply you care and how lucky I am to have you in my life.
+          Hey,<br><br>
+Madam Cuteness, Happy Valentines Day<br><br>
+
+Two years, 
+          long time for people nowaways but not enough for me. 
+          Life has just started with you and I would want it to be lives 
+          if something like that even exists. You have always been special
+          and have made the life I had speical to me. You changes the way I 
+          looked at life, you made me feel that I can be loved too, you made 
+          me feel that I also have a worth, you look after me, you try to listen to me, 
+          you make me happy and have always tried that I don't feel sad or hurt. 
+          You are the best one can ever ask or think or want for them to share their lives with.
+
+Life is never the same,
+          sometimes things go right sometimes they go wrong, sometime I hurt you, 
+          sometimes you hurt me but one thing I know for sure is that you are the one. 
+          I want a life where I cry with you, a life where I laugh with you, 
+          a life where I get to hold your hand everyday, a life where a hug from you fixes a lot of thing.<br><br>
+
+I have done a lot of things wrong in this relationship, 
+          but I do try everytime that my mistakes are not repeated. 
+          I try to fix things to make it work and that is one thing, 
+          I'll always try to do. I'll always try to be better cuz I 
+          want a life with you, cuz ik I wanna see that laugh of yours,
+          cuz ik i wanna wipe tears from those eyes, cuz ik I have never
+          loved someone but you, cuz ik I can never love someone but you, 
+          cuz ik you are the one that makes it easy for you, the one that
+          make me a better person, the one that makes me feel loved and cared
+          and i'll always try to be the one you would want me to be.
+
+Happy Valentines Day Brownieee
+I love  you
         </p>
       </section>
+      
       <section class="wrapper cat" id="catra">
-        <img src="img/petals.gif" alt="petal-shower" width="300" />
+        <img src="img/val1.gif" alt="petal-shower" width="300" />
         <h2>Wish</h2>
         <p>
-          I wish to present you with roses every day, 
-          whether it is a small little one on the branch of a plant,
-the perfect ones found at the flower shop, 
-          or even the ones that bloom, 
-          dropping a petal or two, because they are all beautiful.
-Just as beautiful as you are. 
-          And this ain’t just about the way you look, but how you feel and how you turn everything around you into something 
-          beautiful.
+          My love, 
+          I can't imagine a future without you by my side, 
+          and I wish for nothing more than to celebrate every Valentine’s Day with you.
+          May your life be filled with endless joy, love, and all the happiness you deserve. 
+          I promise to shower you with all the love, care, hugs, and kisses, every single day. 
+          You are my heart and soul, and I’ll always be here to support you, cherish you, and make every moment special. 
+          Here’s to many more beautiful Valentine’s Days together.
         </p>
       </section>
+      
+      
+      
       <section class="wrapper cat" id="garfield">
-        <img src="img/rub.gif" alt="Gulu-Gulu" width="250" />
+        <img src="img/val2.gif" alt="Gulu-Gulu" width="250" />
         <h2>❤️</h2>
         <h6>made with love by Cupcake</h6>
         <h2>🧁</h2>
       </section>
+      
       </div>
     </main>
-    
+    <script>
+        const slides = document.querySelectorAll('.slides img');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 3000);
+    </script>
     <script>
         // Set the target date and time (8th February 2025 at 11:11 AM)
         const targetDate = new Date('2025-02-14T11:11:00').getTime();
